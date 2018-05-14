@@ -2,7 +2,7 @@
 docker container automatied build for openufp
 
 # Build
-docker build https://github.com/craigarms/openufp.git#openufp -t craigarms/openufp:latest
+docker build https://github.com/craigarms/docker-openufp.git#openufp -t craigarms/openufp:latest
 
 # Run
 Usage: docker run craigarms/openufp:latest [OPTIONS] <-n|-w> <BACKEND>
