@@ -5,6 +5,7 @@ docker container automatied build for openufp
 docker build https://github.com/craigarms/docker-openufp.git#openufp -t craigarms/openufp:latest
 
 # Run
+```
 Usage: docker run craigarms/openufp:latest [OPTIONS] <-n|-w> <BACKEND>
 
 Example: docker run craigarms/openufp:latest -n -p '192.168.1.10:3128:Access Denied.' -F
@@ -31,10 +32,11 @@ BACKEND:
    -f FILE   use the blacklist file backend
              FILE is a file which contains blacklisted urls
    -g        use the squidGuard backend\n
+```
 
-NOTE:
+# Note
    The default location of the cache db is /var/cache/openufp/cache.db.
    When squidguard backend is used be sure that this program has rw permissions
-   to the squidguard db files.\n
+   to the squidguard db files.
 
 Version: 1.10
