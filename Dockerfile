@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-COPY entrypoint.sh /
-
 RUN apk update \
  && apk --no-cache add git g++ make db db-dev \
  && git clone https://github.com/craigarms/openufp.git \
@@ -11,10 +9,11 @@ RUN apk update \
  && apk del git g++ make db-dev \
  && rm -rf /var/cache/apk/* \
  && mkdir /blacklist \
- && chmod +x /entrypoint.sh
+ && mkdir -p /var/cache/openufp
 
 EXPOSE 4005/tcp
 
 VOLUME ["/blacklist"]
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/openufp"]
+CMD ["-F"]
