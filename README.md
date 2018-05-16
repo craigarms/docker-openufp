@@ -40,3 +40,11 @@ BACKEND:
    to the squidguard db files.
 
 Version: 1.10
+
+# Logs
+Openufp send all messages to syslog, by default docker ignores them, mount the /dev/log volume to extract the logs and have them in the docker hosts syslog.
+```
+docker run -v=/dev/log:/dev/log craigarms/openufp:latest [OPTIONS] <-n|-w> <BACKEND>
+
+journalctl -t openufp -f
+```
