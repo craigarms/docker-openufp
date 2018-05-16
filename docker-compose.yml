@@ -1,0 +1,12 @@
+version: '2'
+services:
+  openufp:
+    build: .
+    command: -n -f /blacklist/test -d 3 -F
+    volumes:
+     - /home/container/openufp/blacklist:/blacklist/test
+     - /dev/log:/dev/log
+    ports:
+     - 4005:4005/tcp
+    expose:
+     - 4005
